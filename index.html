@@ -52,6 +52,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
+  background-color: rgba(255, 255, 255, 0.5); /* colore trasparente */
+  background-blend-mode: lighten; /* o multiply, overlay, ecc. */
         
     }
     
@@ -80,6 +82,8 @@
     }
     
     table { margin: 0 auto; padding: 0px; width:35%; }
+    
+    .icon { margin: 0 auto; padding: 0px; width:60%; }
 
     th, td {
         padding: 1px;
@@ -143,18 +147,16 @@
 </table>
 <p>ore 16:30</p><br>
 
-<table>
+<table class="icon">
     <tr>
-        <td rowspan="3"><a href="https://www.google.com/maps/place/Basilica+di+San+Petronio,+Bologna" target="_blank" rel="noopener noreferrer">
+        <td><a href="https://maps.app.goo.gl/eFiUFbkxmtitQmUs7" target="_blank" rel="noopener noreferrer">
   <button><i class="fa-solid fa-church"></i></button>
 </a></td>
-<td><c>Clicca sulle icone per</c></td>
-<td rowspan="3"><button>
+<td><c>Clicca sulle icone per scoprire dove si terranno cerimonia e ricevimento</c></td>
+<td><button>
   <i class="fa-solid fa-location-dot"></i>
 </button></td>
-    </tr>
-    <tr><td><c>scoprire dove si terranno</c></td></tr>
-    <tr><td><c>cerimonia e ricevimento</c></td></tr></table>
+    </tr></table>
   </div>
 
   <script>
