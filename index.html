@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Veronica & Lorenzo</title>
 
   <style> 
-    body { font-family: 'Cormorant Garamond', serif; background: #fcfcfc; margin:0; text-align:center; }
+    body { font-family: 'Cormorant Garamond', serif; background: #fcfcfc; margin:0; text-align:center; justify-content: center; }
   
     /* Contenitore della busta */
     .container {
@@ -22,7 +24,12 @@
     
     #invito { display:none; animation: fadeIn 1.5s forwards; }
     
-    p { font-size:1.2em; }
+    p { font-size:1em; padding: 0px; margin-top: 5px;
+        margin-bottom: 0px; }
+    
+    b { font-weight: bold; font-size:1em; padding: 0px; margin-top: 10px }
+    
+    c { font-family: 'Great Vibes', cursive; color:black; font-size:0.9em; margin: 0px; }
     
     h1 { font-family: 'Great Vibes', cursive; color:black; font-size:2em; 
          margin: 0px; margin-top: 30px;}
@@ -39,6 +46,7 @@
         margin: 0 auto;
         /*display: flex;*/
         text-align: center;
+        justify-content: center;
         
         background-image: url("https://martinalarotonda.github.io/Veronica-Lorenzo/tulipani_3.png");
         background-size: contain;
@@ -70,6 +78,21 @@
       height: auto;
       display: block;
     }
+    
+    table { margin: 0 auto; padding: 0px; width:35%; }
+
+    th, td {
+        padding: 1px;
+        text-align: center;
+    }
+
+    /* Giorno evidenziato */
+    .highlight {
+        background-color: #f0cb65;
+        color: white;
+        font-weight: bold;
+        border-radius: 30%;
+    }
   </style>
 </head>
 <body>
@@ -88,6 +111,52 @@
   <div id="invito" class="container_invito">
     <h1>Veronica & Lorenzo</h1>
     <h2>Save The Date</h2>
+    <p>Sono lieti di invitarvi al loro matrimonio</p>
+    <p></p>
+    <b>20 GIUGNO 2027</b>
+    <p></p>
+    <table>
+  <tr>
+    <th>L</th>
+    <th>M</th>
+    <th>M</th>
+    <th>G</th>
+    <th>V</th>
+    <th>S</th>
+    <th>D</th>
+  </tr>
+  <tr>
+    <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+  </tr>
+  <tr>
+    <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+  </tr>
+  <tr>
+    <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+    <td class="highlight">20</td> <!-- Giorno evidenziato -->
+  </tr>
+  <tr>
+    <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+  </tr>
+  <tr>
+    <td>28</td><td>29</td><td>30</td>
+  </tr>
+</table>
+<p>ore 16:30</p>
+<p></p><br>
+
+<table>
+    <tr>
+        <td rowspan="3"><button>
+  <i class="fa-solid fa-church"></i>
+</button></td>
+<td><c>Clicca sulle icone per</c></td>
+<td rowspan="3"><button>
+  <i class="fa-solid fa-location-dot"></i>
+</button></td>
+    </tr>
+    <tr><td><c>scoprire dove si terranno</c></td></tr>
+    <tr><td><c>cerimonia e ricevimento</c></td></tr></table>
   </div>
 
   <script>
