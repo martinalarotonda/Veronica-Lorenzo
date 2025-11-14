@@ -3,35 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <title>Veronica & Lorenzo</title>
 
-  <!-- Meta tag per anteprima WhatsApp/Facebook -->
-  <meta property="og:title" content="Veronica & Lorenzo">
-  <meta property="og:description" content="Con gioia vi invitiamo al nostro matrimonio il 14 Giugno 2027.">
-  <meta property="og:image" content="https://martinalarotonda.github.io/Veronica-Lorenzo/busta_verde.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://martinalarotonda.github.io/Veronica-Lorenzo/index.html">
-
-  <style>
-    body { font-family: 'Georgia', serif; background: #fdf6f0; margin:0; text-align:center; }
-    #invito { display:none; animation: fadeIn 1.5s forwards; }
-    #busta { width:200px; margin:80px auto; cursor:pointer; transition: transform 1s ease; }
-    #busta.aperta { transform: rotateY(180deg); }
+  <style> 
+    body { font-family: 'Cormorant Garamond', serif; background: #fcfcfc; margin:0; text-align:center; }
+    /*#invito { display:none; animation: fadeIn 1.5s forwards; }*/
     @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-    h1 { color:#b56576; font-size:2em; margin-top:20px; }
     p { font-size:1.2em; }
+    h1 { font-family: 'Great Vibes', cursive; color:black; font-size:2.3em; margin: 0px; margin-top: 30px}
+    h2 { font-family: 'Great Vibes', cursive; color:black; font-size:1.2em; margin: 0px; }
     .button { display:inline-block; margin:10px; padding:12px 20px; background:#b56576; color:white; text-decoration:none; border-radius:8px; }
     .button:hover { background:#8e3d4f; }
+
+    /* Contenitore della busta */
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      cursor: pointer;
+      display: flex;
+    }
+    
+    .tulipano {
+  width: 20%;
+  height: auto;
+  margin-top: 0px;
+  position: fixed;   /* fissa l'immagine rispetto alla finestra */
+  bottom: 0;         /* distanza dal bordo inferiore */
+  left: 0;           /* distanza dal bordo sinistro */
+}
+
+    /* Due metà della busta */
+    .half {
+      width: 50%;
+      transition: transform 1s ease;
+    }
+
+    .half.left {
+      transform-origin: left center;
+    }
+
+    .half.right {
+      transform-origin: right center;
+    }
+
+    /* Stato aperto */
+    .container.open .half.left {
+      transform: translateX(-100%);
+    }
+
+    .container.open .half.right {
+      transform: translateX(100%);
+    }
+
+    .half img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Busta con sigillo -->
-  <img src="https://martinalarotonda.github.io/Veronica-Lorenzo/busta_verde.png" alt="Busta" id="busta" onclick="apriInvito()">
+    
+  <!-- Busta divisa in due metà -->
 
   <!-- Invito nascosto -->
   <div id="invito">
-    <h1>Anna & Marco</h1>
+    <img src="https://martinalarotonda.github.io/Veronica-Lorenzo/tulipani_3.png" alt="Busta sinistra"  class="tulipano">
+    <h1>Veronica & Lorenzo</h1>
+    <h2>Save The Date</h2>
     <p>Con gioia vi invitiamo al nostro matrimonio<br><strong>14 Giugno 2026</strong> · Bologna</p>
     <a href="https://forms.gle/tuoLinkRSVP" class="button">Conferma Presenza</a>
     <a href="https://maps.google.com/?q=location" class="button">Come Arrivare</a>
@@ -41,11 +83,11 @@
 
   <script>
     function apriInvito() {
-      const busta = document.getElementById('busta');
+      const container = document.querySelector('.container');
       const invito = document.getElementById('invito');
-      busta.classList.add('aperta');
+      container.classList.add('open');
       setTimeout(() => {
-        busta.style.display = 'none';
+        container.style.display = 'none';
         invito.style.display = 'block';
       }, 1000);
     }
@@ -53,5 +95,3 @@
 
 </body>
 </html>
-
-
