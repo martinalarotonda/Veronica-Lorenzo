@@ -8,14 +8,7 @@
 
   <style> 
     body { font-family: 'Cormorant Garamond', serif; background: #fcfcfc; margin:0; text-align:center; }
-    #invito { display:none; animation: fadeIn 1.5s forwards; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-    p { font-size:1.2em; }
-    h1 { font-family: 'Great Vibes', cursive; color:black; font-size:2.3em; margin: 0px; margin-top: 30px}
-    h2 { font-family: 'Great Vibes', cursive; color:black; font-size:1.2em; margin: 0px; }
-    .button { display:inline-block; margin:10px; padding:12px 20px; background:#b56576; color:white; text-decoration:none; border-radius:8px; }
-    .button:hover { background:#8e3d4f; }
-
+  
     /* Contenitore della busta */
     .container {
       position: relative;
@@ -26,30 +19,44 @@
       display: flex;
     }
     
-    .tulipano {
-  width: 20%;
-  height: auto;
-  margin-top: 0px;
-  position: fixed;   /* fissa l'immagine rispetto alla finestra */
-  bottom: 0;         /* distanza dal bordo inferiore */
-  left: 0;           /* distanza dal bordo sinistro */
-}
+    
+    #invito { display:none; animation: fadeIn 1.5s forwards; }
+    
+    p { font-size:1.2em; }
+    
+    h1 { font-family: 'Great Vibes', cursive; color:black; font-size:2em; 
+         margin: 0px; margin-top: 30px;}
+    
+    h2 { font-family: 'Great Vibes', cursive; color:black; font-size:1em; margin: 0px; }
+    
+    /*.button { display:inline-block; margin:10px; padding:12px 20px; background:#b56576; color:white; text-decoration:none; border-radius:8px; }
+    .button:hover { background:#8e3d4f; }*/
+    
+    .container_invito {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        /*display: flex;*/
+        text-align: center;
+        
+        background-image: url("https://martinalarotonda.github.io/Veronica-Lorenzo/tulipani_3.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        
+    }
+    
+    .testo_invito {
+      position: absolute;
+      color: black;
+    }
 
     /* Due metà della busta */
-    .half {
-      width: 50%;
-      transition: transform 1s ease;
-    }
-
-    .half.left {
-      transform-origin: left center;
-    }
-
-    .half.right {
-      transform-origin: right center;
-    }
-
-    /* Stato aperto */
+    .half { width: 50%; transition: transform 1s ease; }
+    .half.left { transform-origin: left center; }
+    .half.right { transform-origin: right center; }
+    
     .container.open .half.left {
       transform: translateX(-100%);
     }
@@ -78,15 +85,9 @@
   </div>
 
   <!-- Invito nascosto -->
-  <div id="invito">
-    <img src="https://martinalarotonda.github.io/Veronica-Lorenzo/tulipani_3.png" alt="Busta sinistra"  class="tulipano">
+  <div id="invito" class="container_invito">
     <h1>Veronica & Lorenzo</h1>
     <h2>Save The Date</h2>
-    <p>Con gioia vi invitiamo al nostro matrimonio<br><strong>14 Giugno 2026</strong> · Bologna</p>
-    <a href="https://forms.gle/tuoLinkRSVP" class="button">Conferma Presenza</a>
-    <a href="https://maps.google.com/?q=location" class="button">Come Arrivare</a>
-    <a href="https://amazon.it/listaNozze" class="button">Lista Nozze</a>
-    <a href="calendar.ics" class="button">Aggiungi al Calendario</a>
   </div>
 
   <script>
@@ -103,5 +104,3 @@
 
 </body>
 </html>
-
-
