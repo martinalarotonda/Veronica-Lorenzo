@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invito di Matrimonio - Anna & Marco</title>
+
+  <!-- Meta tag per anteprima WhatsApp/Facebook -->
+  <meta property="og:title" content="Invito di Matrimonio - Anna & Marco">
+  <meta property="og:description" content="Con gioia vi invitiamo al nostro matrimonio il 14 Giugno 2026 a Bologna.">
+  <meta property="og:image" content="https://tuosito.com/busta.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tuosito.com/invito.html">
+
+  <style>
+    body { font-family: 'Georgia', serif; background: #fdf6f0; margin:0; text-align:center; }
+    #invito { display:none; animation: fadeIn 1.5s forwards; }
+    #busta { width:200px; margin:80px auto; cursor:pointer; transition: transform 1s ease; }
+    #busta.aperta { transform: rotateY(180deg); }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    h1 { color:#b56576; font-size:2em; margin-top:20px; }
+    p { font-size:1.2em; }
+    .button { display:inline-block; margin:10px; padding:12px 20px; background:#b56576; color:white; text-decoration:none; border-radius:8px; }
+    .button:hover { background:#8e3d4f; }
+  </style>
+</head>
+<body>
+
+  <!-- Busta con sigillo -->
+  <img src="https://tuosito.com/busta.png" alt="Busta con sigillo" id="busta" onclick="apriInvito()">
+
+  <!-- Invito nascosto -->
+  <div id="invito">
+    <h1>Anna & Marco</h1>
+    <p>Con gioia vi invitiamo al nostro matrimonio<br><strong>14 Giugno 2026</strong> · Bologna</p>
+    <a href="https://forms.gle/tuoLinkRSVP" class="button">Conferma Presenza</a>
+    <a href="https://maps.google.com/?q=location" class="button">Come Arrivare</a>
+    <a href="https://amazon.it/listaNozze" class="button">Lista Nozze</a>
+    <a href="calendar.ics" class="button">Aggiungi al Calendario</a>
+  </div>
+
+  <script>
+    function apriInvito() {
+      const busta = document.getElementById('busta');
+      const invito = document.getElementById('invito');
+      busta.classList.add('aperta');
+      setTimeout(() => {
+        busta.style.display = 'none';
+        invito.style.display = 'block';
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
